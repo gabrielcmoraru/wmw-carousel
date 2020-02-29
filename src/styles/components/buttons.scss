@@ -8,4 +8,25 @@
   text-decoration: none;
   user-select: none;
   appearance: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 36px;
+  padding-right: 36px;
+
+  &__primary {
+    background-color: $color-navy;
+    color: $color-white;
+  }
+
+  &__secondary {
+    background-color: $color-white;
+    color: $color-navy;
+  }
+
+  @include media-query($medium-up) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 54px;
+    padding-right: 54px;
+  }
 }

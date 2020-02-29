@@ -21,7 +21,7 @@
           {{ product.featured_image | img_url: 'large' | img_tag }}
         {% endif %}
 
-        <span js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+        <span class="button button__primary" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
       </div>
 
       <div>
