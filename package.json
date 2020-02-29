@@ -31,7 +31,8 @@
     "@shopify/theme-sections": "3.0.0",
     "jquery": "^3.2.1",
     "lodash-es": "^4.17.4",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "swiper": "^5.3.6"
   },
   "scripts": {
     "start": "slate-tools start",
