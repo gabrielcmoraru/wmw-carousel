@@ -12,28 +12,37 @@
 
   <p class="collection__subtitle">{{ collection.description }}</p>
 
-  {% for product in collection.products limit: 8 %}
-    {% assign current_variant = product.selected_or_first_available_variant %}
-    {% comment %} <a href="{{ product.url | within: collection }}"> {% endcomment %}
-      <div class="product__item">
-        <div class="product__item__image">
-          {% if product.featured_image != blank %}
-            {{ product.featured_image | img_url: 'large' | img_tag }}
-          {% endif %}
+  <div class="swiper-controls-wrapper">
+    <div class="js-carousel swiper-container">
+      <div class="swiper-wrapper">
+        {% for product in collection.products limit: 6 %}
+          {% assign current_variant = product.selected_or_first_available_variant %}
+          {% comment %} <a href="{{ product.url | within: collection }}"> {% endcomment %}
+            <div class="product__item swiper-slide">
+              <div class="product__item__image">
+                {% if product.featured_image != blank %}
+                  {{ product.featured_image | img_url: 'large' | img_tag }}
+                {% endif %}
 
-          <span class="button button__primary" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
-        </div>
+                <span class="button button__primary" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+              </div>
 
-        <div class="product__item__details">
-          <h6 class="product__item__details__title">{{ product.title | escape }}</h6>
+              <div class="product__item__details">
+                <h6 class="product__item__details__title">{{ product.title | escape }}</h6>
 
-          <span class="product__item__details___price">
-            {% include 'product-price' %}
-          </span>
-        </div>
+                <span class="product__item__details___price">
+                  {% include 'product-price' %}
+                </span>
+              </div>
+            </div>
+          {% comment %} </a> {% endcomment %}
+        {% endfor %}
       </div>
-    {% comment %} </a> {% endcomment %}
-  {% endfor %}
+      <div class="swiper-pagination swiper-pagination-clickable"></div>
+    </div>
+    <div class="swiper-button swiper-button__prev"></div>
+    <div class="swiper-button swiper-button__next"></div>
+  </div>
 </section>
 
 {% schema %}

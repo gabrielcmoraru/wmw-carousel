@@ -7,6 +7,8 @@
  * @namespace featuredCollection
  */
 import {register} from '@shopify/theme-sections';
+import Swiper from 'swiper';
+import $ from 'jquery';
 
 /**
  * Featured collection constructor
@@ -18,6 +20,7 @@ register('featured-collection', {
 
   init() {
     window.console.log('Initialising featured collection section');
+    initCarousel();
   },
 
   publicMethod() {
@@ -60,3 +63,42 @@ register('featured-collection', {
     // Do something when a section block is deselected
   },
 });
+
+// This can be initialised in a more reusable way, but not quite relevant in this case
+const initCarousel = () => {
+  const carouselSelector = $('.js-carousel');
+  const nextEl = $('.swiper-button__next');
+  const prevEl = $('.swiper-button__prev');
+  const carousel = new Swiper(carouselSelector, {
+    allowTouchMove: true,
+    navigation: {
+      nextEl,
+      prevEl,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+    spaceBetween: 30,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: false,
+    effect: 'slide', // "slide", "fade", "cube", "coverflow" or "flip"
+    speed: 250,
+    breakpoints: {
+      // when window width is >= 480px
+      480: {
+        centeredSlides: false,
+
+        spaceBetween: 20,
+        slidesPerView: 'auto',
+      },
+    },
+  });
+  console.log(carousel);
+};

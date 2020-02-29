@@ -1,0 +1,77 @@
+/**
+ * Sections: Featured collection
+ * -----------------------------------------------------------------------------
+ * Base styling for the featured carousel.
+ *
+ */
+
+// Import carousel base styles
+@import 'node_modules/swiper/swiper';
+
+.swiper-controls-wrapper {
+  position: relative;
+  margin-left: 100px;
+  margin-right: 100px;
+
+  .swiper-button {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 41l21-20L1 1' stroke='grey' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    margin: 0;
+    z-index: 1;
+    top: 40%;
+    transform: translate(0, -50%);
+    outline: none;
+    display: none;
+    cursor: pointer;
+
+    &__next {
+      right: -80px;
+    }
+    &__prev {
+      transform: rotate(180deg) translateY(50%);
+      left: -80px;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.3;
+
+      &:hover {
+          cursor: no-drop;
+      }
+    }
+  }
+
+  .swiper-pagination-bullets {
+    text-align: center;
+
+    .swiper-pagination-bullet {
+      z-index: 999;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $color-grey;
+      margin: 0 9px;
+      outline: none;
+      display: inline-block;
+
+      &.swiper-pagination-bullet-active {
+          background: $color-navy;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  @include media-query($medium-up) {
+    .swiper-button {
+      display: block;
+    }
+  }
+}
