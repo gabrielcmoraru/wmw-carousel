@@ -8,30 +8,31 @@
 
 <section class="featured-collection" data-section-id="{{ section.id }}" data-section-type="featured-collection">
   {%- assign collection = collections[section.settings.collection] -%}
-  <h2>{{ collection.title | escape }}</h2>
+  <h1 class="collection__title">{{ collection.title | escape }}</h1>
 
-  <p>{{ collection.description }}</p>
+  <p class="collection__subtitle">{{ collection.description }}</p>
 
-  {% for product in collection.products limit: 10 %}
+  {% for product in collection.products limit: 8 %}
     {% assign current_variant = product.selected_or_first_available_variant %}
+    {% comment %} <a href="{{ product.url | within: collection }}"> {% endcomment %}
+      <div class="product__item">
+        <div class="product__item__image">
+          {% if product.featured_image != blank %}
+            {{ product.featured_image | img_url: 'large' | img_tag }}
+          {% endif %}
 
-    <a href="{{ product.url | within: collection }}">
-      <div>
-        {% if product.featured_image != blank %}
-          {{ product.featured_image | img_url: 'large' | img_tag }}
-        {% endif %}
+          <span class="button button__primary" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+        </div>
 
-        <span class="button button__primary" js-ajax-cart="addToCart" data-variant-id="{{ current_variant.id }}" data-quantity="1">Add to cart</span>
+        <div class="product__item__details">
+          <h6 class="product__item__details__title">{{ product.title | escape }}</h6>
+
+          <span class="product__item__details___price">
+            {% include 'product-price' %}
+          </span>
+        </div>
       </div>
-
-      <div>
-        <p>{{ product.title | escape }}</p>
-
-        <span>
-          {% include 'product-price' %}
-        </span>
-      </div>
-    </a>
+    {% comment %} </a> {% endcomment %}
   {% endfor %}
 </section>
 
