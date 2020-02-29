@@ -12,6 +12,7 @@
   position: relative;
   margin-left: 100px;
   margin-right: 100px;
+  margin-bottom: calc(#{$gutter-size} * 2);
 
   .swiper-button {
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 41l21-20L1 1' stroke='grey' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");

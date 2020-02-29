@@ -58,14 +58,22 @@
         margin-bottom: $gutter-size;
         margin-left: auto;
         margin-right: auto;
-        opacity: 0;
-        visibility: hidden;
+
+
+
       }
 
-      &:hover {
+      @include media-query($medium-up) {
         .button {
-          opacity: 1;
-          visibility: visible;
+          opacity: 0;
+          visibility: hidden;
+
+        }
+        &:hover {
+          .button {
+            opacity: 1;
+            visibility: visible;
+          }
         }
       }
     }

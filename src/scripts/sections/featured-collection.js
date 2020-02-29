@@ -94,7 +94,6 @@ const initCarousel = () => {
       // when window width is >= 480px
       480: {
         centeredSlides: false,
-
         spaceBetween: 20,
         slidesPerView: 'auto',
       },
