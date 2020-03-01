@@ -69,6 +69,7 @@ const initCarousel = () => {
   const carouselSelector = $('.js-carousel');
   const nextEl = $('.swiper-button__next');
   const prevEl = $('.swiper-button__prev');
+
   const carousel = new Swiper(carouselSelector, {
     allowTouchMove: true,
     navigation: {
@@ -99,5 +100,4 @@ const initCarousel = () => {
       },
     },
   });
-  console.log(carousel);
 };

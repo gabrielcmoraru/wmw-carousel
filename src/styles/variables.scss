@@ -3,7 +3,7 @@
 * (This custom values can also be stored in a json with a additional library)
 */
 
-//Font size mobile
+// Font size mobile
 $font-size-h1-mobile: 28px;
 $font-size-h2-mobile: 24px;
 $font-size-h3-mobile: 21px;
@@ -12,7 +12,7 @@ $font-size-h5-mobile: 16px;
 $font-size-h6-mobile: 14px;
 $font-size-p-mobile:  14px;
 
-//Line height mobile
+// Line height mobile
 $line-height-h1-mobile: 1.21;
 $line-height-h2-mobile: 1.20;
 $line-height-h3-mobile: 1.23;
@@ -21,7 +21,7 @@ $line-height-h5-mobile: 1.18;
 $line-height-h6-mobile: 1.21;
 $line-height-p-mobile:  1.5;
 
-//Font size desktop
+// Font size desktop
 $font-size-h1-desktop: 40px;
 $font-size-h2-desktop: 36px;
 $font-size-h3-desktop: 30px;
@@ -30,7 +30,7 @@ $font-size-h5-desktop: 21px;
 $font-size-h6-desktop: 18px;
 $font-size-p-desktop:  18px;
 
-//Line height desktop
+// Line height desktop
 $line-height-h1-desktop: 1.22;
 $line-height-h2-desktop: 1.22;
 $line-height-h3-desktop: 1.23;
@@ -39,11 +39,16 @@ $line-height-h5-desktop: 1.23;
 $line-height-h6-desktop: 1.27;
 $line-height-p-desktop:  1.44;
 
-//Colors
+// Colors
 $color-navy:        #003366;
 $color-grey:        #BBBBBB;
 $color-grey-dark:   #9B9B9B;
 $color-white:       #ffffff;
+
+// Easings
+$ease-in-sine:		    cubic-bezier( 0.47, 0, 0.745, 0.715 );
+$ease-out-sine:		    cubic-bezier( 0.39, 0.575, 0.565, 1 );
+$ease-in-out-sine:		cubic-bezier( 0.445, 0.05, 0.55, 0.95 );
 
 
 /**

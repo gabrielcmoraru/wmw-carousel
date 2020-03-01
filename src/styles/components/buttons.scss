@@ -13,8 +13,10 @@
   padding-left: 36px;
   padding-right: 36px;
   font-weight: bold;
+  transition: all 0.25s $ease-in-sine;
 
   &:hover {
+    transition: all 0.25s $ease-out-sine;
     cursor: pointer;
   }
 
